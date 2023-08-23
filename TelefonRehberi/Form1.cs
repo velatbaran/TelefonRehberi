@@ -147,7 +147,7 @@ namespace TelefonRehberi
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnKapat_Click(object sender, EventArgs e)
         {
             DialogResult Cikis;
             Cikis = MessageBox.Show("Program Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);

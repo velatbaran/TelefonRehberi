@@ -29,11 +29,13 @@ namespace TelefonRehberi
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBaslangic));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnKapat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,7 +79,7 @@ namespace TelefonRehberi
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
+            this.splitContainer2.Panel1.Controls.Add(this.btnKapat);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
@@ -89,18 +91,18 @@ namespace TelefonRehberi
             this.splitContainer2.SplitterDistance = 116;
             this.splitContainer2.TabIndex = 1;
             // 
-            // button1
+            // btnKapat
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(891, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(23, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKapat.ForeColor = System.Drawing.Color.White;
+            this.btnKapat.Location = new System.Drawing.Point(891, 0);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(23, 23);
+            this.btnKapat.TabIndex = 3;
+            this.btnKapat.Text = "X";
+            this.btnKapat.UseVisualStyleBackColor = false;
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // label1
             // 
@@ -244,7 +246,7 @@ namespace TelefonRehberi
             // 
             this.lblSag.AutoSize = true;
             this.lblSag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSag.Location = new System.Drawing.Point(283, 381);
+            this.lblSag.Location = new System.Drawing.Point(331, 381);
             this.lblSag.Name = "lblSag";
             this.lblSag.Size = new System.Drawing.Size(41, 13);
             this.lblSag.TabIndex = 2;
@@ -254,6 +256,14 @@ namespace TelefonRehberi
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
@@ -261,17 +271,19 @@ namespace TelefonRehberi
             this.Unvan,
             this.Birim,
             this.DahiliNo});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.Location = new System.Drawing.Point(0, 14);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(644, 357);
             this.dataGridView1.TabIndex = 1;
@@ -283,46 +295,51 @@ namespace TelefonRehberi
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 25;
+            this.Id.Visible = false;
+            this.Id.Width = 14;
             // 
             // AdSoyad
             // 
             this.AdSoyad.DataPropertyName = "AdSoyad";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AdSoyad.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AdSoyad.DefaultCellStyle = dataGridViewCellStyle2;
             this.AdSoyad.FillWeight = 10.53231F;
             this.AdSoyad.HeaderText = "Ad Soyad";
+            this.AdSoyad.MinimumWidth = 140;
             this.AdSoyad.Name = "AdSoyad";
             this.AdSoyad.ReadOnly = true;
             this.AdSoyad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdSoyad.Width = 125;
+            this.AdSoyad.Width = 140;
             // 
             // Unvan
             // 
             this.Unvan.DataPropertyName = "Unvan";
             this.Unvan.FillWeight = 10.53231F;
             this.Unvan.HeaderText = "Unvan";
+            this.Unvan.MinimumWidth = 120;
             this.Unvan.Name = "Unvan";
             this.Unvan.ReadOnly = true;
             this.Unvan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Unvan.Width = 150;
+            this.Unvan.Width = 120;
             // 
             // Birim
             // 
             this.Birim.DataPropertyName = "Birim";
             this.Birim.FillWeight = 175.8897F;
             this.Birim.HeaderText = "Birim";
+            this.Birim.MinimumWidth = 240;
             this.Birim.Name = "Birim";
             this.Birim.ReadOnly = true;
             this.Birim.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Birim.Width = 200;
+            this.Birim.Width = 240;
             // 
             // DahiliNo
             // 
             this.DahiliNo.DataPropertyName = "DahiliNo";
             this.DahiliNo.FillWeight = 203.0457F;
             this.DahiliNo.HeaderText = "Dahili No";
+            this.DahiliNo.MinimumWidth = 100;
             this.DahiliNo.Name = "DahiliNo";
             this.DahiliNo.ReadOnly = true;
             this.DahiliNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -377,12 +394,12 @@ namespace TelefonRehberi
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSol;
         private System.Windows.Forms.Label lblSag;
+        private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdSoyad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unvan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Birim;
         private System.Windows.Forms.DataGridViewTextBoxColumn DahiliNo;
-        private System.Windows.Forms.Button button1;
     }
 }
 
