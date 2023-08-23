@@ -35,7 +35,6 @@ namespace TelefonRehberi
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fBaslangic));
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -79,7 +78,6 @@ namespace TelefonRehberi
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.btnKapat);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox2);
             this.splitContainer2.Panel1.Controls.Add(this.pictureBox1);
@@ -90,19 +88,6 @@ namespace TelefonRehberi
             this.splitContainer2.Size = new System.Drawing.Size(914, 517);
             this.splitContainer2.SplitterDistance = 116;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(891, 0);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(23, 23);
-            this.btnKapat.TabIndex = 3;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // label1
             // 
@@ -138,7 +123,7 @@ namespace TelefonRehberi
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             // 
@@ -279,7 +264,7 @@ namespace TelefonRehberi
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 14);
+            this.dataGridView1.Location = new System.Drawing.Point(5, 10);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -351,7 +336,7 @@ namespace TelefonRehberi
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(914, 517);
             this.Controls.Add(this.splitContainer2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fBaslangic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -394,7 +379,6 @@ namespace TelefonRehberi
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSol;
         private System.Windows.Forms.Label lblSag;
-        private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn AdSoyad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unvan;
