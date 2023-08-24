@@ -341,6 +341,7 @@ namespace TelefonRehberi
             this.Name = "fBaslangic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dsi 24.Bölge Müdürlüğü Telefon Rehberi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fBaslangic_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();

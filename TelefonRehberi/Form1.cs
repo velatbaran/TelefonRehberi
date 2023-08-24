@@ -147,5 +147,18 @@ namespace TelefonRehberi
             }
         }
 
+        private void fBaslangic_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult x = MessageBox.Show("Programdan Çıkmak İstediğinizden Emin Misiniz?", "Çıkış Mesajı!", MessageBoxButtons.YesNo);
+            if (x == DialogResult.Yes)
+            {
+                Environment.Exit(0); 
+
+            }
+            else if (x == DialogResult.No)
+            {
+                e.Cancel = true; 
+            }
+        }
     }
 }
