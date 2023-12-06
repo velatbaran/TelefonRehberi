@@ -23,7 +23,9 @@ namespace TelefonRehberi
 
         private DataTable data;
         //bağlantı 
-        public OleDbConnection baglanti = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Dahili Rehber\dsi24bolge_dahili.xlsx; Extended Properties='Excel 12.0;Xml;HDR=YES;'");
+        static string yol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
+        //static string yol = @"D:\Dahili Rehber\dsi24bolge_dahili.xlsx";
+        public OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + yol + "; Extended Properties='Excel 12.0;Xml;HDR=YES;'");
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -174,23 +176,23 @@ namespace TelefonRehberi
             DialogResult onay = MessageBox.Show(ad + " personel bilgisini silmek istediğinize emin misiniz?", "Personel Silme İşlemi", MessageBoxButtons.YesNo);
             if (onay == DialogResult.Yes)
             {
-                    try
-                    {
-                        //bağlantıyı açıyoruz.
-                        baglanti.Open();
+                try
+                {
+                    //bağlantıyı açıyoruz.
+                    baglanti.Open();
 
-                        OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set SilindiMi='True' where Id=@p5", baglanti);
+                    OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set SilindiMi='True' where Id=@p5", baglanti);
 
-                        komut.Parameters.AddWithValue("@p5", Convert.ToInt32(id));
-                        komut.ExecuteNonQuery();
-                        baglanti.Close();
-                        MessageBox.Show("Silme işlemi başarıyla gerçekleşti.", "Personel Güncelleme İşlemi");
-                        verilerigoster();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());
-                    }
+                    komut.Parameters.AddWithValue("@p5", Convert.ToInt32(id));
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    MessageBox.Show("Silme işlemi başarıyla gerçekleşti.", "Personel Güncelleme İşlemi");
+                    verilerigoster();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
             }
             else
             {
