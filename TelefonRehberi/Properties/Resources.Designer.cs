@@ -83,6 +83,26 @@ namespace TelefonRehberi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dsi1 {
+            get {
+                object obj = ResourceManager.GetObject("dsi1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ekle24 {
+            get {
+                object obj = ResourceManager.GetObject("Ekle24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap save24 {
             get {
                 object obj = ResourceManager.GetObject("save24", resourceCulture);

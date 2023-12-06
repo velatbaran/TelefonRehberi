@@ -29,6 +29,7 @@ namespace TelefonRehberi
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +40,7 @@ namespace TelefonRehberi
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.btnYeniKayit = new System.Windows.Forms.Button();
             this.lblSol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtAra = new System.Windows.Forms.TextBox();
@@ -54,6 +56,12 @@ namespace TelefonRehberi
             this.Unvan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DahiliNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblToplamKayitSayisi = new System.Windows.Forms.Label();
+            this.lblExcelToplamKayitSayisi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -66,6 +74,7 @@ namespace TelefonRehberi
             this.splitContainer3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -129,6 +138,10 @@ namespace TelefonRehberi
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.lblExcelToplamKayitSayisi);
+            this.splitContainer3.Panel1.Controls.Add(this.lblToplamKayitSayisi);
+            this.splitContainer3.Panel1.Controls.Add(this.label3);
+            this.splitContainer3.Panel1.Controls.Add(this.btnYeniKayit);
             this.splitContainer3.Panel1.Controls.Add(this.lblSol);
             this.splitContainer3.Panel1.Controls.Add(this.groupBox1);
             // 
@@ -139,6 +152,23 @@ namespace TelefonRehberi
             this.splitContainer3.Size = new System.Drawing.Size(914, 397);
             this.splitContainer3.SplitterDistance = 254;
             this.splitContainer3.TabIndex = 1;
+            // 
+            // btnYeniKayit
+            // 
+            this.btnYeniKayit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnYeniKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYeniKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnYeniKayit.ForeColor = System.Drawing.Color.White;
+            this.btnYeniKayit.Image = global::TelefonRehberi.Properties.Resources.Ekle24;
+            this.btnYeniKayit.Location = new System.Drawing.Point(14, 313);
+            this.btnYeniKayit.Name = "btnYeniKayit";
+            this.btnYeniKayit.Size = new System.Drawing.Size(192, 33);
+            this.btnYeniKayit.TabIndex = 2;
+            this.btnYeniKayit.Text = "Yeni Kayıt";
+            this.btnYeniKayit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnYeniKayit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnYeniKayit.UseVisualStyleBackColor = false;
+            this.btnYeniKayit.Click += new System.EventHandler(this.btnYeniKayit_Click);
             // 
             // lblSol
             // 
@@ -159,7 +189,7 @@ namespace TelefonRehberi
             this.groupBox1.Controls.Add(this.rdUnvan);
             this.groupBox1.Controls.Add(this.rdAdSoyad);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 45);
+            this.groupBox1.Location = new System.Drawing.Point(14, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(192, 230);
             this.groupBox1.TabIndex = 0;
@@ -272,7 +302,6 @@ namespace TelefonRehberi
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(644, 357);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Id
             // 
@@ -329,12 +358,65 @@ namespace TelefonRehberi
             this.DahiliNo.ReadOnly = true;
             this.DahiliNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem,
+            this.güncelleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(14, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Toplam Kayıt Sayısı :";
+            // 
+            // lblToplamKayitSayisi
+            // 
+            this.lblToplamKayitSayisi.AutoSize = true;
+            this.lblToplamKayitSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamKayitSayisi.Location = new System.Drawing.Point(145, 29);
+            this.lblToplamKayitSayisi.Name = "lblToplamKayitSayisi";
+            this.lblToplamKayitSayisi.Size = new System.Drawing.Size(41, 13);
+            this.lblToplamKayitSayisi.TabIndex = 4;
+            this.lblToplamKayitSayisi.Text = "label4";
+            // 
+            // lblExcelToplamKayitSayisi
+            // 
+            this.lblExcelToplamKayitSayisi.AutoSize = true;
+            this.lblExcelToplamKayitSayisi.Location = new System.Drawing.Point(17, 48);
+            this.lblExcelToplamKayitSayisi.Name = "lblExcelToplamKayitSayisi";
+            this.lblExcelToplamKayitSayisi.Size = new System.Drawing.Size(35, 13);
+            this.lblExcelToplamKayitSayisi.TabIndex = 5;
+            this.lblExcelToplamKayitSayisi.Text = "label4";
+            this.lblExcelToplamKayitSayisi.Visible = false;
+            // 
             // fBaslangic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(914, 517);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.splitContainer2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -359,6 +441,7 @@ namespace TelefonRehberi
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,7 +450,6 @@ namespace TelefonRehberi
 
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.SplitContainer splitContainer3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
@@ -385,6 +467,14 @@ namespace TelefonRehberi
         private System.Windows.Forms.DataGridViewTextBoxColumn Unvan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Birim;
         private System.Windows.Forms.DataGridViewTextBoxColumn DahiliNo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
+        private System.Windows.Forms.Button btnYeniKayit;
+        private System.Windows.Forms.ToolStripMenuItem güncelleToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblToplamKayitSayisi;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Label lblExcelToplamKayitSayisi;
     }
 }
 

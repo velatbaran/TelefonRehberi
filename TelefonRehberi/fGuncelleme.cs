@@ -18,6 +18,8 @@ namespace TelefonRehberi
             InitializeComponent();
         }
 
+        fBaslangic f = new fBaslangic();
+
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             txtDahiliNo.Clear();
@@ -33,39 +35,29 @@ namespace TelefonRehberi
             {
                 try
                 {
-                    //Dosyanın okunacağı dizin
-                    //string filePath = @"C:\Users\Semih\Documents\Test.xlsx";
-                    string tamYol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
-
-                    //Excel bağlantı adresi
-                    string baglantiAdresi = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + tamYol + ";Extended Properties='Excel 12.0;Xml;HDR=YES;'";
-
-                    //bağlantı 
-                    OleDbConnection baglanti = new OleDbConnection(baglantiAdresi);
-
                     //bağlantıyı açıyoruz.
-                    baglanti.Open();
+                    f.baglanti.Open();
 
-                    OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set AdSoyad=@p1,Unvan=@p2,Birim=@p3,DahiliNo=@p4 where Id=@p5", baglanti);
+                    OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set AdSoyad=@p1,Unvan=@p2,Birim=@p3,DahiliNo=@p4 where Id=@p5", f.baglanti);
 
                     komut.Parameters.AddWithValue("@p1", txtAdSoyad.Text);
                     komut.Parameters.AddWithValue("@p2", txtUnvan.Text);
                     komut.Parameters.AddWithValue("@p3", txtBirim.Text);
                     komut.Parameters.AddWithValue("@p4", txtDahiliNo.Text);
-                    komut.Parameters.AddWithValue("@p5", lblId.Text);
+                 //   komut.Parameters.AddWithValue("@p5", "False");
+                    komut.Parameters.AddWithValue("@p5", Convert.ToInt32(lblId.Text));
                     komut.ExecuteNonQuery();
-                    baglanti.Close();
-                    MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.");
+                   f. baglanti.Close();
+                    MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.", "Personel Güncelleme İşlemi");
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message.ToString());
                 }
-
             }
             else
             {
-                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!");
+                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!", "Personel Güncelleme İşlemi");
             }
         }
 
@@ -80,8 +72,6 @@ namespace TelefonRehberi
             Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
             if (Cikis == DialogResult.Yes)
             {
-                fBaslangic f = new fBaslangic();
-                f.Show();
                 this.Close();
             }
         }
