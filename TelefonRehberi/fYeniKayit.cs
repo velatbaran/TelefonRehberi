@@ -24,7 +24,6 @@ namespace TelefonRehberi
             Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
             if (Cikis == DialogResult.Yes)
             {
-                f.Show();
                 this.Close();
             }
         }
@@ -61,6 +60,8 @@ namespace TelefonRehberi
                     komut.ExecuteNonQuery();
                     f.baglanti.Close();
                     MessageBox.Show("Personel ekleme işlemi başarıyla gerçekleşti.", "Yeni Personel Ekleme İşlemi");
+                    f.Show();
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

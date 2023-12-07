@@ -49,6 +49,7 @@ namespace TelefonRehberi
                     komut.ExecuteNonQuery();
                    f. baglanti.Close();
                     MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.", "Personel Güncelleme İşlemi");
+                    this.Close();
                 }
                 catch (Exception ex)
                 {
