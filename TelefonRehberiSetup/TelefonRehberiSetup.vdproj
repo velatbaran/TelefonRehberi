@@ -112,12 +112,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C55BC70F81C083022BA14C2EE3B48BC4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F4D293BD25D2434E93D5F78BF2EC52D5"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -167,6 +161,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_680AD12142B4DF2B7E3CFF3D3B5F2734"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C55BC70F81C083022BA14C2EE3B48BC4"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -224,6 +224,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -620,7 +628,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TelefonRehberiSetup"
         "ProductCode" = "8:{B5CE03AC-5CBC-40C1-80DE-B3EA71CDC969}"
-        "PackageCode" = "8:{6557EE32-CDFB-4B96-8299-68E82304F128}"
+        "PackageCode" = "8:{5878A67F-F79E-425E-8540-2B8E91322B8B}"
         "UpgradeCode" = "8:{1A6E6DC4-1331-4948-A16C-7C5583CD4552}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

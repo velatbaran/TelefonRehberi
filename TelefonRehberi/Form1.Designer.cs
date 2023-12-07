@@ -40,6 +40,9 @@ namespace TelefonRehberi
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.lblExcelToplamKayitSayisi = new System.Windows.Forms.Label();
+            this.lblToplamKayitSayisi = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnYeniKayit = new System.Windows.Forms.Button();
             this.lblSol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,9 +62,6 @@ namespace TelefonRehberi
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblToplamKayitSayisi = new System.Windows.Forms.Label();
-            this.lblExcelToplamKayitSayisi = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -153,9 +153,40 @@ namespace TelefonRehberi
             this.splitContainer3.SplitterDistance = 254;
             this.splitContainer3.TabIndex = 1;
             // 
+            // lblExcelToplamKayitSayisi
+            // 
+            this.lblExcelToplamKayitSayisi.AutoSize = true;
+            this.lblExcelToplamKayitSayisi.Location = new System.Drawing.Point(17, 48);
+            this.lblExcelToplamKayitSayisi.Name = "lblExcelToplamKayitSayisi";
+            this.lblExcelToplamKayitSayisi.Size = new System.Drawing.Size(35, 13);
+            this.lblExcelToplamKayitSayisi.TabIndex = 5;
+            this.lblExcelToplamKayitSayisi.Text = "label4";
+            this.lblExcelToplamKayitSayisi.Visible = false;
+            // 
+            // lblToplamKayitSayisi
+            // 
+            this.lblToplamKayitSayisi.AutoSize = true;
+            this.lblToplamKayitSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamKayitSayisi.Location = new System.Drawing.Point(145, 29);
+            this.lblToplamKayitSayisi.Name = "lblToplamKayitSayisi";
+            this.lblToplamKayitSayisi.Size = new System.Drawing.Size(41, 13);
+            this.lblToplamKayitSayisi.TabIndex = 4;
+            this.lblToplamKayitSayisi.Text = "label4";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.Location = new System.Drawing.Point(14, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Toplam Kayıt Sayısı :";
+            // 
             // btnYeniKayit
             // 
             this.btnYeniKayit.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnYeniKayit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYeniKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeniKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnYeniKayit.ForeColor = System.Drawing.Color.White;
@@ -216,6 +247,7 @@ namespace TelefonRehberi
             // rdDahiliNo
             // 
             this.rdDahiliNo.AutoSize = true;
+            this.rdDahiliNo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdDahiliNo.Location = new System.Drawing.Point(25, 180);
             this.rdDahiliNo.Name = "rdDahiliNo";
             this.rdDahiliNo.Size = new System.Drawing.Size(76, 19);
@@ -227,6 +259,7 @@ namespace TelefonRehberi
             // rdBirim
             // 
             this.rdBirim.AutoSize = true;
+            this.rdBirim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdBirim.Location = new System.Drawing.Point(25, 146);
             this.rdBirim.Name = "rdBirim";
             this.rdBirim.Size = new System.Drawing.Size(54, 19);
@@ -238,6 +271,7 @@ namespace TelefonRehberi
             // rdUnvan
             // 
             this.rdUnvan.AutoSize = true;
+            this.rdUnvan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdUnvan.Location = new System.Drawing.Point(25, 112);
             this.rdUnvan.Name = "rdUnvan";
             this.rdUnvan.Size = new System.Drawing.Size(60, 19);
@@ -249,6 +283,7 @@ namespace TelefonRehberi
             // rdAdSoyad
             // 
             this.rdAdSoyad.AutoSize = true;
+            this.rdAdSoyad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rdAdSoyad.Location = new System.Drawing.Point(25, 76);
             this.rdAdSoyad.Name = "rdAdSoyad";
             this.rdAdSoyad.Size = new System.Drawing.Size(76, 19);
@@ -379,36 +414,6 @@ namespace TelefonRehberi
             this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.güncelleToolStripMenuItem.Text = "Güncelle";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(14, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Toplam Kayıt Sayısı :";
-            // 
-            // lblToplamKayitSayisi
-            // 
-            this.lblToplamKayitSayisi.AutoSize = true;
-            this.lblToplamKayitSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblToplamKayitSayisi.Location = new System.Drawing.Point(145, 29);
-            this.lblToplamKayitSayisi.Name = "lblToplamKayitSayisi";
-            this.lblToplamKayitSayisi.Size = new System.Drawing.Size(41, 13);
-            this.lblToplamKayitSayisi.TabIndex = 4;
-            this.lblToplamKayitSayisi.Text = "label4";
-            // 
-            // lblExcelToplamKayitSayisi
-            // 
-            this.lblExcelToplamKayitSayisi.AutoSize = true;
-            this.lblExcelToplamKayitSayisi.Location = new System.Drawing.Point(17, 48);
-            this.lblExcelToplamKayitSayisi.Name = "lblExcelToplamKayitSayisi";
-            this.lblExcelToplamKayitSayisi.Size = new System.Drawing.Size(35, 13);
-            this.lblExcelToplamKayitSayisi.TabIndex = 5;
-            this.lblExcelToplamKayitSayisi.Text = "label4";
-            this.lblExcelToplamKayitSayisi.Visible = false;
             // 
             // fBaslangic
             // 

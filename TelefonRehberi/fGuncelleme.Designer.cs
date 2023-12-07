@@ -126,6 +126,7 @@ namespace TelefonRehberi
             // btnKapat
             // 
             this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKapat.ForeColor = System.Drawing.Color.White;
             this.btnKapat.Location = new System.Drawing.Point(366, 2);
@@ -139,6 +140,7 @@ namespace TelefonRehberi
             // btnTemizle
             // 
             this.btnTemizle.BackColor = System.Drawing.Color.Red;
+            this.btnTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTemizle.ForeColor = System.Drawing.Color.White;
             this.btnTemizle.Image = global::TelefonRehberi.Properties.Resources.clear4848;
@@ -155,6 +157,7 @@ namespace TelefonRehberi
             // btnGuncelle
             // 
             this.btnGuncelle.BackColor = System.Drawing.Color.Green;
+            this.btnGuncelle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.ForeColor = System.Drawing.Color.White;
             this.btnGuncelle.Image = global::TelefonRehberi.Properties.Resources.save24;

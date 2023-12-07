@@ -47,6 +47,7 @@ namespace TelefonRehberi
             // btnKapat
             // 
             this.btnKapat.BackColor = System.Drawing.Color.Red;
+            this.btnKapat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKapat.ForeColor = System.Drawing.Color.White;
             this.btnKapat.Location = new System.Drawing.Point(347, 3);
@@ -60,6 +61,7 @@ namespace TelefonRehberi
             // btnTemizle
             // 
             this.btnTemizle.BackColor = System.Drawing.Color.Red;
+            this.btnTemizle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTemizle.ForeColor = System.Drawing.Color.White;
             this.btnTemizle.Image = global::TelefonRehberi.Properties.Resources.clear4848;
@@ -76,6 +78,7 @@ namespace TelefonRehberi
             // btnYeniKayit
             // 
             this.btnYeniKayit.BackColor = System.Drawing.Color.Navy;
+            this.btnYeniKayit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnYeniKayit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeniKayit.ForeColor = System.Drawing.Color.White;
             this.btnYeniKayit.Image = global::TelefonRehberi.Properties.Resources.save24;
