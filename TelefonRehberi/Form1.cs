@@ -24,6 +24,7 @@ namespace TelefonRehberi
         private DataTable data;
         //bağlantı 
         static string yol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
+        //static string yol = @"\\10.124.1.38\ftp24\Dahili Rehber\dsi24bolge_dahili.xlsx";
         //static string yol = @"D:\Dahili Rehber\dsi24bolge_dahili.xlsx";
         public OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + yol + "; Extended Properties='Excel 12.0;Xml;HDR=YES;'");
 
@@ -71,7 +72,7 @@ namespace TelefonRehberi
             //DataGrid'imizin kaynağını oluşturduğumuz DataTable ile dolduruyoruz.
             dataGridView1.DataSource = data;
             lblToplamKayitSayisi.Text = dataGridView1.Rows.Count.ToString();
-            dataGridView1.Columns[5].Visible = false;
+            //dataGridView1.Columns[6].Visible = false;
             baglanti.Close();
         }
 
@@ -103,7 +104,7 @@ namespace TelefonRehberi
         {
             DataView dv = new DataView(data);
 
-            if (txtAra.Text == "")
+            if (string.IsNullOrEmpty(txtAra.Text) == true)
             {
                 verilerigoster();
             }
@@ -142,6 +143,17 @@ namespace TelefonRehberi
             {
 
                 dv.RowFilter = string.Format("convert(DahiliNo, 'System.String') Like '%{0}%' ", txtAra.Text);
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("bulunamadı.");
+                }
+            }
+
+            else if (rdCepNo.Checked == true)
+            {
+
+                dv.RowFilter = string.Format("convert(CepNo, 'System.String') Like '%{0}%' ", txtAra.Text);
 
                 if (dataGridView1.Rows.Count == 0)
                 {
@@ -218,6 +230,7 @@ namespace TelefonRehberi
                 string unvan = dataGridView1.Rows[seciliAlan].Cells[2].Value.ToString();
                 string birim = dataGridView1.Rows[seciliAlan].Cells[3].Value.ToString();
                 string dahili = dataGridView1.Rows[seciliAlan].Cells[4].Value.ToString();
+                string cep = dataGridView1.Rows[seciliAlan].Cells[5].Value.ToString();
 
                 fGuncelleme f = new fGuncelleme();
                 f.lblId.Text = id;
@@ -225,6 +238,7 @@ namespace TelefonRehberi
                 f.txtUnvan.Text = unvan;
                 f.txtBirim.Text = birim;
                 f.txtDahiliNo.Text = dahili;
+                f.txtCepNo.Text = cep;
                 f.Show();
             }
             else

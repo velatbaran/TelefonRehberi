@@ -54,14 +54,17 @@ namespace TelefonRehberi
             this.rdAdSoyad = new System.Windows.Forms.RadioButton();
             this.lblSag = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdSoyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unvan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Birim = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DahiliNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CepNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SilindiMi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rdCepNo = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -94,7 +97,7 @@ namespace TelefonRehberi
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(914, 517);
+            this.splitContainer2.Size = new System.Drawing.Size(1052, 517);
             this.splitContainer2.SplitterDistance = 116;
             this.splitContainer2.TabIndex = 1;
             // 
@@ -102,7 +105,7 @@ namespace TelefonRehberi
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(297, 32);
+            this.label1.Location = new System.Drawing.Point(371, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(308, 51);
             this.label1.TabIndex = 2;
@@ -112,7 +115,7 @@ namespace TelefonRehberi
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TelefonRehberi.Properties.Resources.dsi;
-            this.pictureBox2.Location = new System.Drawing.Point(794, 24);
+            this.pictureBox2.Location = new System.Drawing.Point(946, 24);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 89);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -149,7 +152,7 @@ namespace TelefonRehberi
             // 
             this.splitContainer3.Panel2.Controls.Add(this.lblSag);
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView1);
-            this.splitContainer3.Size = new System.Drawing.Size(914, 397);
+            this.splitContainer3.Size = new System.Drawing.Size(1052, 397);
             this.splitContainer3.SplitterDistance = 254;
             this.splitContainer3.TabIndex = 1;
             // 
@@ -191,7 +194,7 @@ namespace TelefonRehberi
             this.btnYeniKayit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnYeniKayit.ForeColor = System.Drawing.Color.White;
             this.btnYeniKayit.Image = global::TelefonRehberi.Properties.Resources.Ekle24;
-            this.btnYeniKayit.Location = new System.Drawing.Point(14, 313);
+            this.btnYeniKayit.Location = new System.Drawing.Point(14, 323);
             this.btnYeniKayit.Name = "btnYeniKayit";
             this.btnYeniKayit.Size = new System.Drawing.Size(192, 33);
             this.btnYeniKayit.TabIndex = 2;
@@ -213,6 +216,7 @@ namespace TelefonRehberi
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdCepNo);
             this.groupBox1.Controls.Add(this.txtAra);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.rdDahiliNo);
@@ -222,7 +226,7 @@ namespace TelefonRehberi
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.groupBox1.Location = new System.Drawing.Point(14, 67);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 230);
+            this.groupBox1.Size = new System.Drawing.Size(192, 250);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Seçenekleri";
@@ -296,7 +300,7 @@ namespace TelefonRehberi
             // 
             this.lblSag.AutoSize = true;
             this.lblSag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblSag.Location = new System.Drawing.Point(331, 381);
+            this.lblSag.Location = new System.Drawing.Point(460, 381);
             this.lblSag.Name = "lblSag";
             this.lblSag.Size = new System.Drawing.Size(41, 13);
             this.lblSag.TabIndex = 2;
@@ -320,7 +324,9 @@ namespace TelefonRehberi
             this.AdSoyad,
             this.Unvan,
             this.Birim,
-            this.DahiliNo});
+            this.DahiliNo,
+            this.CepNo,
+            this.SilindiMi});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -335,63 +341,8 @@ namespace TelefonRehberi
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(644, 357);
+            this.dataGridView1.Size = new System.Drawing.Size(786, 357);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            this.Id.Width = 14;
-            // 
-            // AdSoyad
-            // 
-            this.AdSoyad.DataPropertyName = "AdSoyad";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.AdSoyad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.AdSoyad.FillWeight = 10.53231F;
-            this.AdSoyad.HeaderText = "Ad Soyad";
-            this.AdSoyad.MinimumWidth = 140;
-            this.AdSoyad.Name = "AdSoyad";
-            this.AdSoyad.ReadOnly = true;
-            this.AdSoyad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdSoyad.Width = 140;
-            // 
-            // Unvan
-            // 
-            this.Unvan.DataPropertyName = "Unvan";
-            this.Unvan.FillWeight = 10.53231F;
-            this.Unvan.HeaderText = "Unvan";
-            this.Unvan.MinimumWidth = 120;
-            this.Unvan.Name = "Unvan";
-            this.Unvan.ReadOnly = true;
-            this.Unvan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Unvan.Width = 120;
-            // 
-            // Birim
-            // 
-            this.Birim.DataPropertyName = "Birim";
-            this.Birim.FillWeight = 175.8897F;
-            this.Birim.HeaderText = "Birim";
-            this.Birim.MinimumWidth = 240;
-            this.Birim.Name = "Birim";
-            this.Birim.ReadOnly = true;
-            this.Birim.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Birim.Width = 240;
-            // 
-            // DahiliNo
-            // 
-            this.DahiliNo.DataPropertyName = "DahiliNo";
-            this.DahiliNo.FillWeight = 203.0457F;
-            this.DahiliNo.HeaderText = "Dahili No";
-            this.DahiliNo.MinimumWidth = 100;
-            this.DahiliNo.Name = "DahiliNo";
-            this.DahiliNo.ReadOnly = true;
-            this.DahiliNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // contextMenuStrip1
             // 
@@ -415,15 +366,101 @@ namespace TelefonRehberi
             this.güncelleToolStripMenuItem.Text = "Güncelle";
             this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 15;
+            // 
+            // AdSoyad
+            // 
+            this.AdSoyad.DataPropertyName = "AdSoyad";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.AdSoyad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.AdSoyad.FillWeight = 10.53231F;
+            this.AdSoyad.HeaderText = "Ad Soyad";
+            this.AdSoyad.MinimumWidth = 140;
+            this.AdSoyad.Name = "AdSoyad";
+            this.AdSoyad.ReadOnly = true;
+            this.AdSoyad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdSoyad.Width = 140;
+            // 
+            // Unvan
+            // 
+            this.Unvan.DataPropertyName = "Unvan";
+            this.Unvan.FillWeight = 10.53231F;
+            this.Unvan.HeaderText = "Unvan";
+            this.Unvan.MinimumWidth = 140;
+            this.Unvan.Name = "Unvan";
+            this.Unvan.ReadOnly = true;
+            this.Unvan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Unvan.Width = 140;
+            // 
+            // Birim
+            // 
+            this.Birim.DataPropertyName = "Birim";
+            this.Birim.FillWeight = 175.8897F;
+            this.Birim.HeaderText = "Birim";
+            this.Birim.MinimumWidth = 250;
+            this.Birim.Name = "Birim";
+            this.Birim.ReadOnly = true;
+            this.Birim.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Birim.Width = 250;
+            // 
+            // DahiliNo
+            // 
+            this.DahiliNo.DataPropertyName = "DahiliNo";
+            this.DahiliNo.FillWeight = 203.0457F;
+            this.DahiliNo.HeaderText = "Dahili No";
+            this.DahiliNo.MinimumWidth = 80;
+            this.DahiliNo.Name = "DahiliNo";
+            this.DahiliNo.ReadOnly = true;
+            this.DahiliNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DahiliNo.Width = 80;
+            // 
+            // CepNo
+            // 
+            this.CepNo.DataPropertyName = "CepNo";
+            this.CepNo.HeaderText = "Cep No";
+            this.CepNo.MinimumWidth = 140;
+            this.CepNo.Name = "CepNo";
+            this.CepNo.ReadOnly = true;
+            this.CepNo.Width = 140;
+            // 
+            // SilindiMi
+            // 
+            this.SilindiMi.DataPropertyName = "SilindiMi";
+            this.SilindiMi.HeaderText = "Silindi Mi?";
+            this.SilindiMi.Name = "SilindiMi";
+            this.SilindiMi.ReadOnly = true;
+            this.SilindiMi.Visible = false;
+            this.SilindiMi.Width = 15;
+            // 
+            // rdCepNo
+            // 
+            this.rdCepNo.AutoSize = true;
+            this.rdCepNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdCepNo.Location = new System.Drawing.Point(25, 214);
+            this.rdCepNo.Name = "rdCepNo";
+            this.rdCepNo.Size = new System.Drawing.Size(66, 19);
+            this.rdCepNo.TabIndex = 6;
+            this.rdCepNo.TabStop = true;
+            this.rdCepNo.Text = "Cep No";
+            this.rdCepNo.UseVisualStyleBackColor = true;
+            // 
             // fBaslangic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-            this.ClientSize = new System.Drawing.Size(914, 517);
+            this.ClientSize = new System.Drawing.Size(1052, 517);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.splitContainer2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fBaslangic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -467,11 +504,6 @@ namespace TelefonRehberi
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSol;
         private System.Windows.Forms.Label lblSag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AdSoyad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unvan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Birim;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DahiliNo;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem silToolStripMenuItem;
         private System.Windows.Forms.Button btnYeniKayit;
@@ -480,6 +512,14 @@ namespace TelefonRehberi
         public System.Windows.Forms.Label lblToplamKayitSayisi;
         public System.Windows.Forms.DataGridView dataGridView1;
         public System.Windows.Forms.Label lblExcelToplamKayitSayisi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AdSoyad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Unvan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Birim;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DahiliNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CepNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SilindiMi;
+        private System.Windows.Forms.RadioButton rdCepNo;
     }
 }
 

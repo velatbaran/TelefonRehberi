@@ -38,17 +38,18 @@ namespace TelefonRehberi
                     //bağlantıyı açıyoruz.
                     f.baglanti.Open();
 
-                    OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set AdSoyad=@p1,Unvan=@p2,Birim=@p3,DahiliNo=@p4 where Id=@p5", f.baglanti);
+                    OleDbCommand komut = new OleDbCommand("Update [" + "Sayfa1" + "$] set AdSoyad=@p1,Unvan=@p2,Birim=@p3,DahiliNo=@p4,CepNo=@p5 where Id=@p6", f.baglanti);
 
                     komut.Parameters.AddWithValue("@p1", txtAdSoyad.Text);
                     komut.Parameters.AddWithValue("@p2", txtUnvan.Text);
                     komut.Parameters.AddWithValue("@p3", txtBirim.Text);
                     komut.Parameters.AddWithValue("@p4", txtDahiliNo.Text);
-                 //   komut.Parameters.AddWithValue("@p5", "False");
-                    komut.Parameters.AddWithValue("@p5", Convert.ToInt32(lblId.Text));
+                    komut.Parameters.AddWithValue("@p5", txtCepNo.Text);
+                    komut.Parameters.AddWithValue("@p6", Convert.ToInt32(lblId.Text));
                     komut.ExecuteNonQuery();
-                   f. baglanti.Close();
+                    f.baglanti.Close();
                     MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.", "Personel Güncelleme İşlemi");
+                    f.Show();
                     this.Close();
                 }
                 catch (Exception ex)

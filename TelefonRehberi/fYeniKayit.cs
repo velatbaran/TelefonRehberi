@@ -47,7 +47,7 @@ namespace TelefonRehberi
                     //bağlantıyı açıyoruz.
                     f.baglanti.Open();
 
-                    OleDbCommand komut = new OleDbCommand("Insert into [" + "Sayfa1" + "$]  (Id,AdSoyad,Unvan,Birim,DahiliNo,SilindiMi) values(@p1,@p2,@p3,@p4,@p5,@p6)", f.baglanti);
+                    OleDbCommand komut = new OleDbCommand("Insert into [" + "Sayfa1" + "$]  (Id,AdSoyad,Unvan,Birim,DahiliNo,CepNo,SilindiMi) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7)", f.baglanti);
 
                     int Id = Convert.ToInt32(lblToplamKayitSayisi.Text) + 1;
 
@@ -56,7 +56,8 @@ namespace TelefonRehberi
                     komut.Parameters.AddWithValue("@p3", txtUnvan.Text);
                     komut.Parameters.AddWithValue("@p4", txtBirim.Text);
                     komut.Parameters.AddWithValue("@p5", txtDahiliNo.Text);
-                    komut.Parameters.AddWithValue("@p6", "False");
+                    komut.Parameters.AddWithValue("@p6", txtCepNo.Text);
+                    komut.Parameters.AddWithValue("@p7", "False");
                     komut.ExecuteNonQuery();
                     f.baglanti.Close();
                     MessageBox.Show("Personel ekleme işlemi başarıyla gerçekleşti.", "Yeni Personel Ekleme İşlemi");

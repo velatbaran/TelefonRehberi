@@ -42,6 +42,8 @@ namespace TelefonRehberi
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.txtCepNo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +60,7 @@ namespace TelefonRehberi
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(18, 82);
+            this.label2.Location = new System.Drawing.Point(18, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 1;
@@ -68,7 +70,7 @@ namespace TelefonRehberi
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(31, 115);
+            this.label3.Location = new System.Drawing.Point(31, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 2;
@@ -78,7 +80,7 @@ namespace TelefonRehberi
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(18, 148);
+            this.label4.Location = new System.Drawing.Point(18, 141);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 13);
             this.label4.TabIndex = 3;
@@ -93,21 +95,21 @@ namespace TelefonRehberi
             // 
             // txtUnvan
             // 
-            this.txtUnvan.Location = new System.Drawing.Point(94, 79);
+            this.txtUnvan.Location = new System.Drawing.Point(94, 76);
             this.txtUnvan.Name = "txtUnvan";
             this.txtUnvan.Size = new System.Drawing.Size(253, 20);
             this.txtUnvan.TabIndex = 5;
             // 
             // txtBirim
             // 
-            this.txtBirim.Location = new System.Drawing.Point(94, 112);
+            this.txtBirim.Location = new System.Drawing.Point(94, 107);
             this.txtBirim.Name = "txtBirim";
             this.txtBirim.Size = new System.Drawing.Size(253, 20);
             this.txtBirim.TabIndex = 6;
             // 
             // txtDahiliNo
             // 
-            this.txtDahiliNo.Location = new System.Drawing.Point(94, 144);
+            this.txtDahiliNo.Location = new System.Drawing.Point(94, 137);
             this.txtDahiliNo.Name = "txtDahiliNo";
             this.txtDahiliNo.Size = new System.Drawing.Size(253, 20);
             this.txtDahiliNo.TabIndex = 7;
@@ -144,10 +146,10 @@ namespace TelefonRehberi
             this.btnTemizle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTemizle.ForeColor = System.Drawing.Color.White;
             this.btnTemizle.Image = global::TelefonRehberi.Properties.Resources.clear4848;
-            this.btnTemizle.Location = new System.Drawing.Point(217, 171);
+            this.btnTemizle.Location = new System.Drawing.Point(217, 204);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(130, 36);
-            this.btnTemizle.TabIndex = 9;
+            this.btnTemizle.TabIndex = 10;
             this.btnTemizle.Text = "Temizle";
             this.btnTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -161,15 +163,33 @@ namespace TelefonRehberi
             this.btnGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuncelle.ForeColor = System.Drawing.Color.White;
             this.btnGuncelle.Image = global::TelefonRehberi.Properties.Resources.save24;
-            this.btnGuncelle.Location = new System.Drawing.Point(94, 170);
+            this.btnGuncelle.Location = new System.Drawing.Point(94, 203);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(117, 37);
-            this.btnGuncelle.TabIndex = 8;
+            this.btnGuncelle.TabIndex = 9;
             this.btnGuncelle.Text = "Güncelle";
             this.btnGuncelle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuncelle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // txtCepNo
+            // 
+            this.txtCepNo.Location = new System.Drawing.Point(94, 168);
+            this.txtCepNo.MaxLength = 15;
+            this.txtCepNo.Name = "txtCepNo";
+            this.txtCepNo.Size = new System.Drawing.Size(253, 20);
+            this.txtCepNo.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(18, 172);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Cep No ";
             // 
             // fGuncelleme
             // 
@@ -177,6 +197,8 @@ namespace TelefonRehberi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(399, 252);
+            this.Controls.Add(this.txtCepNo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnTemizle);
@@ -214,5 +236,7 @@ namespace TelefonRehberi
         public System.Windows.Forms.TextBox txtDahiliNo;
         public System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnKapat;
+        public System.Windows.Forms.TextBox txtCepNo;
+        private System.Windows.Forms.Label label5;
     }
 }
