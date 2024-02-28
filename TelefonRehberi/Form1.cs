@@ -37,7 +37,7 @@ namespace TelefonRehberi
             rdAdSoyad.Checked = true;
 
             verilerigoster();
-            ExcelToplamKayitSayisi();
+          //  ExcelToplamKayitSayisi();
 
             lblSol.Text = "Güncelleme talebi için: bt24 @dsi.gov.tr";
             lblSag.Text = "Copyright @ " + DateTime.Now.Year + " Bilgi Teknolojileri Şube Müdürlüğü";
