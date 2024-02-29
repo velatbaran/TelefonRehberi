@@ -17,24 +17,25 @@ namespace TelefonRehberi
         {
             InitializeComponent();
         }
-        fBaslangic f = new fBaslangic();
-        private void btnKapat_Click(object sender, EventArgs e)
-        {
-            DialogResult Cikis;
-            Cikis = MessageBox.Show("Ekran Kapatılacak Emin siniz?", "Kapatma Uyarısı!", MessageBoxButtons.YesNo);
-            if (Cikis == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
 
-        private void btnTemizle_Click(object sender, EventArgs e)
+        fBaslangic f = (fBaslangic)Application.OpenForms["fBaslangic"];
+        int _id = 0;
+
+        private void Temizle()
         {
             txtDahiliNo.Clear();
             txtAdSoyad.Clear();
             txtUnvan.Clear();
             txtBirim.Clear();
             txtAdSoyad.Focus();
+            txtCepNo.Clear();
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            f.verilerigoster();
+            f.ExcelToplamKayit();
+            this.Close();
         }
 
         private void btnYeniKayit_Click(object sender, EventArgs e)
@@ -43,15 +44,10 @@ namespace TelefonRehberi
             {
                 try
                 {
-
                     //bağlantıyı açıyoruz.
                     f.baglanti.Open();
-
                     OleDbCommand komut = new OleDbCommand("Insert into [" + "Sayfa1" + "$]  (Id,AdSoyad,Unvan,Birim,DahiliNo,CepNo,SilindiMi) values(@p1,@p2,@p3,@p4,@p5,@p6,@p7)", f.baglanti);
-
-                    int Id = Convert.ToInt32(lblToplamKayitSayisi.Text) + 1;
-
-                    komut.Parameters.AddWithValue("@p1", Id);
+                    komut.Parameters.AddWithValue("@p1", _id);
                     komut.Parameters.AddWithValue("@p2", txtAdSoyad.Text);
                     komut.Parameters.AddWithValue("@p3", txtUnvan.Text);
                     komut.Parameters.AddWithValue("@p4", txtBirim.Text);
@@ -60,9 +56,11 @@ namespace TelefonRehberi
                     komut.Parameters.AddWithValue("@p7", "False");
                     komut.ExecuteNonQuery();
                     f.baglanti.Close();
-                    MessageBox.Show("Personel ekleme işlemi başarıyla gerçekleşti.", "Yeni Personel Ekleme İşlemi");
-                    f.Show();
-                    this.Close();
+                    MessageBox.Show("Personel ekleme işlemi başarıyla gerçekleşti.", "Personel Ekleme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    Temizle();
+                    f.verilerigoster();
+                    f.ExcelToplamKayit();
+                    _id += 1;
                 }
                 catch (Exception ex)
                 {
@@ -71,8 +69,32 @@ namespace TelefonRehberi
             }
             else
             {
-                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!", "Yeni Personel Ekleme İşlemi");
+                MessageBox.Show("Lütfen gerekli tüm alanları doldurunuz!", "Personel Ekleme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
+        }
+
+        private void fYeniKayit_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                dynamic result = MessageBox.Show("Çıkmak istiyor musunuz?", "Personel Ekleme İşlemi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    e.Cancel = false;
+                    f.verilerigoster();
+                    f.ExcelToplamKayit();
+                }
+
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void fYeniKayit_Load(object sender, EventArgs e)
+        {
+            _id = Convert.ToInt32(lblToplamKayit.Text);
         }
     }
 }

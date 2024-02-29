@@ -46,6 +46,7 @@ namespace TelefonRehberi
             this.btnYeniKayit = new System.Windows.Forms.Button();
             this.lblSol = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdCepNo = new System.Windows.Forms.RadioButton();
             this.txtAra = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rdDahiliNo = new System.Windows.Forms.RadioButton();
@@ -54,9 +55,6 @@ namespace TelefonRehberi
             this.rdAdSoyad = new System.Windows.Forms.RadioButton();
             this.lblSag = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AdSoyad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unvan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,7 +62,10 @@ namespace TelefonRehberi
             this.DahiliNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CepNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SilindiMi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rdCepNo = new System.Windows.Forms.RadioButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.silToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.güncelleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -78,6 +79,7 @@ namespace TelefonRehberi
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer2
@@ -150,6 +152,7 @@ namespace TelefonRehberi
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.dataGridView2);
             this.splitContainer3.Panel2.Controls.Add(this.lblSag);
             this.splitContainer3.Panel2.Controls.Add(this.dataGridView1);
             this.splitContainer3.Size = new System.Drawing.Size(1052, 397);
@@ -159,22 +162,23 @@ namespace TelefonRehberi
             // lblExcelToplamKayitSayisi
             // 
             this.lblExcelToplamKayitSayisi.AutoSize = true;
+            this.lblExcelToplamKayitSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblExcelToplamKayitSayisi.Location = new System.Drawing.Point(17, 48);
             this.lblExcelToplamKayitSayisi.Name = "lblExcelToplamKayitSayisi";
-            this.lblExcelToplamKayitSayisi.Size = new System.Drawing.Size(35, 13);
+            this.lblExcelToplamKayitSayisi.Size = new System.Drawing.Size(140, 13);
             this.lblExcelToplamKayitSayisi.TabIndex = 5;
-            this.lblExcelToplamKayitSayisi.Text = "label4";
+            this.lblExcelToplamKayitSayisi.Text = "ExcelToplamKayitSayisi";
             this.lblExcelToplamKayitSayisi.Visible = false;
             // 
             // lblToplamKayitSayisi
             // 
             this.lblToplamKayitSayisi.AutoSize = true;
             this.lblToplamKayitSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblToplamKayitSayisi.Location = new System.Drawing.Point(145, 29);
+            this.lblToplamKayitSayisi.Location = new System.Drawing.Point(141, 29);
             this.lblToplamKayitSayisi.Name = "lblToplamKayitSayisi";
-            this.lblToplamKayitSayisi.Size = new System.Drawing.Size(41, 13);
+            this.lblToplamKayitSayisi.Size = new System.Drawing.Size(109, 13);
             this.lblToplamKayitSayisi.TabIndex = 4;
-            this.lblToplamKayitSayisi.Text = "label4";
+            this.lblToplamKayitSayisi.Text = "ToplamKayitSayisi";
             // 
             // label3
             // 
@@ -230,6 +234,18 @@ namespace TelefonRehberi
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Arama Seçenekleri";
+            // 
+            // rdCepNo
+            // 
+            this.rdCepNo.AutoSize = true;
+            this.rdCepNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rdCepNo.Location = new System.Drawing.Point(25, 214);
+            this.rdCepNo.Name = "rdCepNo";
+            this.rdCepNo.Size = new System.Drawing.Size(66, 19);
+            this.rdCepNo.TabIndex = 6;
+            this.rdCepNo.TabStop = true;
+            this.rdCepNo.Text = "Cep No";
+            this.rdCepNo.UseVisualStyleBackColor = true;
             // 
             // txtAra
             // 
@@ -344,28 +360,6 @@ namespace TelefonRehberi
             this.dataGridView1.Size = new System.Drawing.Size(786, 357);
             this.dataGridView1.TabIndex = 1;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.silToolStripMenuItem,
-            this.güncelleToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
-            // 
-            // silToolStripMenuItem
-            // 
-            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
-            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.silToolStripMenuItem.Text = "Sil";
-            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
-            // 
-            // güncelleToolStripMenuItem
-            // 
-            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
-            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
-            this.güncelleToolStripMenuItem.Text = "Güncelle";
-            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -440,17 +434,36 @@ namespace TelefonRehberi
             this.SilindiMi.Visible = false;
             this.SilindiMi.Width = 15;
             // 
-            // rdCepNo
+            // contextMenuStrip1
             // 
-            this.rdCepNo.AutoSize = true;
-            this.rdCepNo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rdCepNo.Location = new System.Drawing.Point(25, 214);
-            this.rdCepNo.Name = "rdCepNo";
-            this.rdCepNo.Size = new System.Drawing.Size(66, 19);
-            this.rdCepNo.TabIndex = 6;
-            this.rdCepNo.TabStop = true;
-            this.rdCepNo.Text = "Cep No";
-            this.rdCepNo.UseVisualStyleBackColor = true;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.silToolStripMenuItem,
+            this.güncelleToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 48);
+            // 
+            // silToolStripMenuItem
+            // 
+            this.silToolStripMenuItem.Name = "silToolStripMenuItem";
+            this.silToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.silToolStripMenuItem.Text = "Sil";
+            this.silToolStripMenuItem.Click += new System.EventHandler(this.silToolStripMenuItem_Click);
+            // 
+            // güncelleToolStripMenuItem
+            // 
+            this.güncelleToolStripMenuItem.Name = "güncelleToolStripMenuItem";
+            this.güncelleToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.güncelleToolStripMenuItem.Text = "Güncelle";
+            this.güncelleToolStripMenuItem.Click += new System.EventHandler(this.güncelleToolStripMenuItem_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(18, 374);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(240, 23);
+            this.dataGridView2.TabIndex = 3;
+            this.dataGridView2.Visible = false;
             // 
             // fBaslangic
             // 
@@ -484,6 +497,7 @@ namespace TelefonRehberi
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,6 +534,7 @@ namespace TelefonRehberi
         private System.Windows.Forms.DataGridViewTextBoxColumn CepNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn SilindiMi;
         private System.Windows.Forms.RadioButton rdCepNo;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
 

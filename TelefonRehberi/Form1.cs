@@ -24,7 +24,7 @@ namespace TelefonRehberi
         private DataTable data;
         //bağlantı 
         static string yol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
-       // static string yol = @"\\10.124.1.38\ftp24\Dahili Rehber\dsi24bolge_dahili.xlsx";
+        // static string yol = @"\\10.124.1.38\ftp24\Dahili Rehber\dsi24bolge_dahili.xlsx";
         //static string yol = @"D:\Dahili Rehber\dsi24bolge_dahili.xlsx";
         public OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + yol + "; Extended Properties='Excel 12.0;Xml;HDR=YES;'");
 
@@ -37,7 +37,7 @@ namespace TelefonRehberi
             rdAdSoyad.Checked = true;
 
             verilerigoster();
-          //  ExcelToplamKayitSayisi();
+            ExcelToplamKayit();
 
             lblSol.Text = "Güncelleme talebi için: bt24 @dsi.gov.tr";
             lblSag.Text = "Copyright @ " + DateTime.Now.Year + " Bilgi Teknolojileri Şube Müdürlüğü";
@@ -76,10 +76,10 @@ namespace TelefonRehberi
             baglanti.Close();
         }
 
-        public void ExcelToplamKayitSayisi()
+        public void ExcelToplamKayit()
         {
             //tüm verileri seçmek için select sorgumuz. Sayfa1 olan kısmı Excel'de hangi sayfayı açmak istiyosanız orayı yazabilirsiniz.
-            OleDbCommand komut = new OleDbCommand("Select * From [" + "Sayfa1" + "$] ", baglanti);
+            OleDbCommand komut = new OleDbCommand("Select * From [" + "Sayfa1" + "$]  ", baglanti);
 
             //bağlantıyı açıyoruz.
             baglanti.Open();
@@ -89,13 +89,13 @@ namespace TelefonRehberi
             //Grid'imiz için bir DataTable oluşturuyoruz.
             data = new DataTable();
 
-            //Grid'imiz için bir DataTable oluşturuyoruz.
-            data = new DataTable();
-
             //DataAdapter'da ki verileri data adındaki DataTable'a dolduruyoruz.
             da.Fill(data);
 
-            lblExcelToplamKayitSayisi.Text = data.Rows.Count.ToString();
+            //DataGrid'imizin kaynağını oluşturduğumuz DataTable ile dolduruyoruz.
+            dataGridView2.DataSource = data;
+            lblExcelToplamKayitSayisi.Text = dataGridView2.Rows.Count.ToString();
+            //dataGridView1.Columns[6].Visible = false;
             baglanti.Close();
         }
 
@@ -105,63 +105,22 @@ namespace TelefonRehberi
             DataView dv = new DataView(data);
 
             if (string.IsNullOrEmpty(txtAra.Text) == true)
-            {
                 verilerigoster();
-            }
 
             if (rdAdSoyad.Checked == true)
-            {
-
                 dv.RowFilter = "AdSoyad LIKE '%" + txtAra.Text + "%'";
-
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("bulunamadı.");
-                }
-            }
             else if (rdUnvan.Checked == true)
-            {
-
                 dv.RowFilter = "Unvan LIKE '%" + txtAra.Text + "%'";
-
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("bulunamadı.");
-                }
-            }
             else if (rdBirim.Checked == true)
-            {
-
                 dv.RowFilter = "Birim LIKE '%" + txtAra.Text + "%'";
-
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("bulunamadı.");
-                }
-            }
             else if (rdDahiliNo.Checked == true)
-            {
-
                 dv.RowFilter = string.Format("convert(DahiliNo, 'System.String') Like '%{0}%' ", txtAra.Text);
-
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("bulunamadı.");
-                }
-            }
-
             else if (rdCepNo.Checked == true)
-            {
-
                 dv.RowFilter = string.Format("convert(CepNo, 'System.String') Like '%{0}%' ", txtAra.Text);
 
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("bulunamadı.");
-                }
-            }
-
             dataGridView1.DataSource = dv;
+            if (dataGridView1.Rows.Count == 0)
+                MessageBox.Show("bulunamadı.");
 
         }
 
@@ -216,7 +175,7 @@ namespace TelefonRehberi
         private void btnYeniKayit_Click(object sender, EventArgs e)
         {
             fYeniKayit f = new fYeniKayit();
-            f.lblToplamKayitSayisi.Text = lblExcelToplamKayitSayisi.Text;
+            f.lblToplamKayit.Text = lblExcelToplamKayitSayisi.Text;
             f.Show();
         }
 

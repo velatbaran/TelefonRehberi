@@ -34,6 +34,7 @@ namespace TelefonRehberi
         private void btnTemizle_Click(object sender, EventArgs e)
         {
             f.verilerigoster();
+            this.Close();
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
@@ -60,8 +61,6 @@ namespace TelefonRehberi
                         MessageBox.Show("Güncelleme işlemi başarıyla gerçekleşti.", "Personel Güncelleme Sayfası", MessageBoxButtons.OK, MessageBoxIcon.Question);
                         Temizle();
                         f.verilerigoster();
-                        // f.Show();
-                        // this.Close();
                     }
                     catch (Exception ex)
                     {
