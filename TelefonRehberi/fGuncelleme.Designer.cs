@@ -39,7 +39,6 @@ namespace TelefonRehberi
             this.txtBirim = new System.Windows.Forms.TextBox();
             this.txtDahiliNo = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
-            this.btnKapat = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtCepNo = new System.Windows.Forms.TextBox();
@@ -125,20 +124,6 @@ namespace TelefonRehberi
             this.lblId.Text = "label5";
             this.lblId.Visible = false;
             // 
-            // btnKapat
-            // 
-            this.btnKapat.BackColor = System.Drawing.Color.Red;
-            this.btnKapat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKapat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKapat.ForeColor = System.Drawing.Color.White;
-            this.btnKapat.Location = new System.Drawing.Point(366, 2);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(26, 23);
-            this.btnKapat.TabIndex = 11;
-            this.btnKapat.Text = "X";
-            this.btnKapat.UseVisualStyleBackColor = false;
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
             // btnTemizle
             // 
             this.btnTemizle.BackColor = System.Drawing.Color.Red;
@@ -150,7 +135,7 @@ namespace TelefonRehberi
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(130, 36);
             this.btnTemizle.TabIndex = 10;
-            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.Text = "Vazgeç";
             this.btnTemizle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTemizle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTemizle.UseVisualStyleBackColor = false;
@@ -199,7 +184,6 @@ namespace TelefonRehberi
             this.ClientSize = new System.Drawing.Size(399, 252);
             this.Controls.Add(this.txtCepNo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnGuncelle);
@@ -211,11 +195,12 @@ namespace TelefonRehberi
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fGuncelleme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Güncelleme Sayfası";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fGuncelleme_FormClosing);
             this.Load += new System.EventHandler(this.fGuncelleme_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,7 +220,6 @@ namespace TelefonRehberi
         public System.Windows.Forms.TextBox txtBirim;
         public System.Windows.Forms.TextBox txtDahiliNo;
         public System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Button btnKapat;
         public System.Windows.Forms.TextBox txtCepNo;
         private System.Windows.Forms.Label label5;
     }
