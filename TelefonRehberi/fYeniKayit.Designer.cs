@@ -156,6 +156,7 @@ namespace TelefonRehberi
             this.lblToplamKayit.Size = new System.Drawing.Size(35, 13);
             this.lblToplamKayit.TabIndex = 24;
             this.lblToplamKayit.Text = "label5";
+            this.lblToplamKayit.Visible = false;
             // 
             // txtCepNo
             // 

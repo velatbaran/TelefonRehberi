@@ -23,8 +23,8 @@ namespace TelefonRehberi
 
         private DataTable data;
         //bağlantı 
-        static string yol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
-        // static string yol = @"\\10.124.1.38\ftp24\Dahili Rehber\dsi24bolge_dahili.xlsx";
+       // static string yol = @"\\10.124.1.38\ftp24\Bilgi Teknolojileri Şube Müdürlüğü\Dahili Rehber\dsi24bolge_dahili.xlsx";
+         static string yol = @"\\10.124.1.38\ftp24\Dahili Rehber\dsi24bolge_dahili.xlsx";
         //static string yol = @"D:\Dahili Rehber\dsi24bolge_dahili.xlsx";
         public OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + yol + "; Extended Properties='Excel 12.0;Xml;HDR=YES;'");
 
