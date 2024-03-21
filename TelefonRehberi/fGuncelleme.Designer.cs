@@ -36,13 +36,13 @@ namespace TelefonRehberi
             this.label4 = new System.Windows.Forms.Label();
             this.txtAdSoyad = new System.Windows.Forms.TextBox();
             this.txtUnvan = new System.Windows.Forms.TextBox();
-            this.txtBirim = new System.Windows.Forms.TextBox();
             this.txtDahiliNo = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.txtCepNo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.cmbSubeler = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,11 +69,11 @@ namespace TelefonRehberi
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(31, 110);
+            this.label3.Location = new System.Drawing.Point(18, 110);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Birim";
+            this.label3.Text = "Şube";
             // 
             // label4
             // 
@@ -98,13 +98,6 @@ namespace TelefonRehberi
             this.txtUnvan.Name = "txtUnvan";
             this.txtUnvan.Size = new System.Drawing.Size(253, 20);
             this.txtUnvan.TabIndex = 5;
-            // 
-            // txtBirim
-            // 
-            this.txtBirim.Location = new System.Drawing.Point(94, 107);
-            this.txtBirim.Name = "txtBirim";
-            this.txtBirim.Size = new System.Drawing.Size(253, 20);
-            this.txtBirim.TabIndex = 6;
             // 
             // txtDahiliNo
             // 
@@ -176,19 +169,54 @@ namespace TelefonRehberi
             this.label5.TabIndex = 12;
             this.label5.Text = "Cep No ";
             // 
+            // cmbSubeler
+            // 
+            this.cmbSubeler.FormattingEnabled = true;
+            this.cmbSubeler.Items.AddRange(new object[] {
+            "Bilgi Teknolojileri Şube Müdürlüğü",
+            "Bölge Müdürlük Makamı",
+            "Personel Şube Müdürlüğü",
+            "Muhasebe Şube Müdürlüğü",
+            "Destek Hizmetleri Şube Müdürlüğü",
+            "241. Şube Müdürlüğü",
+            "Barajlar ve Hes Şube Müdürlüğü",
+            "Havza Yönetimi,İzleme ve Tahsisler Şube Müdürlüğü",
+            "Emlak ve Kamulaştırma Şube Müdürlüğü",
+            "Arazi Toplulaştırma ve Tarla İçi Geliştirme Şube Müdürlüğü",
+            "Strateji Geliştirme Şube Müdürlüğü",
+            "Muhasebe Şube Müdürlüğü",
+            "İşletme ve Bakım  Şube Müdürlüğü",
+            "Makine İmalat ve Donatım Şube Müdürlüğü",
+            "Elektromekanik Teçhizat Şube Müdürlüğü",
+            "Taşkın Kontrol Şube Müdürlüğü",
+            "Kalite Kontrol ve Laboratuvar Şube Müdürlüğü",
+            "Sulama Şube Müdürlüğü",
+            "Bilgi Koordinasyon",
+            "Jeoteknik Hizmetler Şube Müdürlüğü",
+            "Yeraltı Suları Şube Müdürlüğü",
+            "Hukuk İşleri Müdürlüğü",
+            "241. Şube Müdürlüğü",
+            "242. Şube Müdürlüğü",
+            "243. Şube Müdürlüğü"});
+            this.cmbSubeler.Location = new System.Drawing.Point(94, 107);
+            this.cmbSubeler.Name = "cmbSubeler";
+            this.cmbSubeler.Size = new System.Drawing.Size(253, 21);
+            this.cmbSubeler.TabIndex = 27;
+            this.cmbSubeler.Text = "seçiniz...";
+            // 
             // fGuncelleme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(399, 252);
+            this.Controls.Add(this.cmbSubeler);
             this.Controls.Add(this.txtCepNo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.txtDahiliNo);
-            this.Controls.Add(this.txtBirim);
             this.Controls.Add(this.txtUnvan);
             this.Controls.Add(this.txtAdSoyad);
             this.Controls.Add(this.label4);
@@ -217,10 +245,10 @@ namespace TelefonRehberi
         private System.Windows.Forms.Button btnGuncelle;
         public System.Windows.Forms.TextBox txtAdSoyad;
         public System.Windows.Forms.TextBox txtUnvan;
-        public System.Windows.Forms.TextBox txtBirim;
         public System.Windows.Forms.TextBox txtDahiliNo;
         public System.Windows.Forms.Label lblId;
         public System.Windows.Forms.TextBox txtCepNo;
         private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cmbSubeler;
     }
 }

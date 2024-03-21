@@ -195,7 +195,7 @@ namespace TelefonRehberi
                 f.lblId.Text = id;
                 f.txtAdSoyad.Text = adsoyad;
                 f.txtUnvan.Text = unvan;
-                f.txtBirim.Text = birim;
+                f.cmbSubeler.Text = birim;
                 f.txtDahiliNo.Text = dahili;
                 f.txtCepNo.Text = cep;
                 f.Show();

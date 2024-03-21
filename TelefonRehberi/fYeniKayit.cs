@@ -26,7 +26,7 @@ namespace TelefonRehberi
             txtDahiliNo.Clear();
             txtAdSoyad.Clear();
             txtUnvan.Clear();
-            txtBirim.Clear();
+            cmbSubeler.Text="seçiniz...";
             txtAdSoyad.Focus();
             txtCepNo.Clear();
         }
@@ -40,7 +40,7 @@ namespace TelefonRehberi
 
         private void btnYeniKayit_Click(object sender, EventArgs e)
         {
-            if (txtAdSoyad.Text != "" && txtUnvan.Text != "" && txtBirim.Text != "" && txtDahiliNo.Text != "")
+            if (txtAdSoyad.Text != "" && txtUnvan.Text != "" && cmbSubeler.Text != "seçiniz..." && txtDahiliNo.Text != "")
             {
                 try
                 {
@@ -50,7 +50,7 @@ namespace TelefonRehberi
                     komut.Parameters.AddWithValue("@p1", _id);
                     komut.Parameters.AddWithValue("@p2", txtAdSoyad.Text);
                     komut.Parameters.AddWithValue("@p3", txtUnvan.Text);
-                    komut.Parameters.AddWithValue("@p4", txtBirim.Text);
+                    komut.Parameters.AddWithValue("@p4", cmbSubeler.Text);
                     komut.Parameters.AddWithValue("@p5", txtDahiliNo.Text);
                     komut.Parameters.AddWithValue("@p6", txtCepNo.Text);
                     komut.Parameters.AddWithValue("@p7", "False");
